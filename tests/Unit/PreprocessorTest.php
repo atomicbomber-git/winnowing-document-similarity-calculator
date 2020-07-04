@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Support\DistanceCalculator;
 use App\Support\Preprocessor;
 use PHPUnit\Framework\TestCase;
 
@@ -9,7 +10,9 @@ class PreprocessorTest extends TestCase
 {
     public function testHash()
     {
+        DistanceCalculator::sorensenDiceDistance("Hello world", "Hello");
 
+        $this->assertEquals(TRUE, 1);
     }
 
 
