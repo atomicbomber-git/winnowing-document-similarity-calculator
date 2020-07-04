@@ -106,6 +106,7 @@
       <path value="$PROJECT_DIR$/vendor/wamania/php-stemmer" />
       <path value="$PROJECT_DIR$/vendor/yooper/php-text-analysis" />
       <path value="$PROJECT_DIR$/vendor/yooper/stop-words" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

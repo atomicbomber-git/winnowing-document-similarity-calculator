@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Support\DistanceCalculator;
+use App\Support\SimilarityCalculator;
 use App\Support\Preprocessor;
 use PHPUnit\Framework\TestCase;
 
@@ -44,9 +44,7 @@ HEREDOC;
 
     public function testHash()
     {
-        $distance = DistanceCalculator::sorensenDiceDistance(self::TEXT_01, self::TEXT_02);
-
-        dump($distance);
+        $distance = SimilarityCalculator::sorensenDiceDistance(self::TEXT_01, self::TEXT_02);
     }
 
 

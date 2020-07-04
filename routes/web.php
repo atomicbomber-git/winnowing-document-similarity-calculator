@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\SimilarityCalculatorFormController;
+use App\Http\Controllers\SimilarityCalculatorProcessController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", class_basename(SimilarityCalculatorFormController::class))
+    ->name("similarity-calculator-form");
+
+Route::post("/", class_basename(SimilarityCalculatorProcessController::class))
+    ->name("similarity-calculator-process");
