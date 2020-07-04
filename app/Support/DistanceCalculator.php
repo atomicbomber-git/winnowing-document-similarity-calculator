@@ -15,17 +15,10 @@ class DistanceCalculator
     public static function sorensenDiceDistance($text_1, $text_2)
     {
         $preprocessor = new Preprocessor();
+        $bigrams_1 = collect(ngrams($preprocessor->textToFingerprintHashes($text_1), 2, ''))->unique();
+        $bigrams_2 = collect(ngrams($preprocessor->textToFingerprintHashes($text_2), 2, ''))->unique();
 
-        $bigrams_1 = ngrams($preprocessor->textToFingerprintHashes($text_1), 2, '');
-        $bigrams_2 = ngrams($preprocessor->textToFingerprintHashes($text_2), 2, '');
-
-        dump($bigrams_1);
-
-
-//        $joined_1 = array_map(fn($bigram) => "{$bigrams_1}{}", $bigrams_1);
-
-
-
-
+        return (2 *  $bigrams_1->intersect($bigrams_2)->count()) /
+            ($bigrams_1->count() + $bigrams_2->count());
     }
 }
